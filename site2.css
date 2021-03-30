@@ -16,6 +16,15 @@ body {
 header {
     grid-area: header;
     border: black 2px solid;
+
+    display: grid;
+    grid-template-areas:
+    "link1 links links links link5";
+    grid-gap: 10px;
+    padding: 10px;  
+    border: black 2px solid;  
+    justify-items: center;
+    align-items: center;
 }
 
 section {
@@ -33,18 +42,7 @@ footer {
     text-align: center;
 }
 
-.headcontent {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:
-    "link1 link2 link3 link4 . link5";
 
-    /* <-- why not working to horizontal --> */
-
-    grid-gap: 10px;
-    padding: 10px;  
-    border: black 2px solid;  
-}
 
 #uppercase {
     text-transform: uppercase;
@@ -52,8 +50,19 @@ footer {
 
 #stylenone {
     list-style-type: none;
+    grid-area: links;
+    border: black 2px;
+    
 }
 
+#stylenone > li {
+    float: left;
+    background-color: yellow;
+    padding: 5px;
+    border: black 2px solid;
+    width: 30%;
+
+}
 .link1 {
     grid-area: link1;
     background-color: blueviolet;
@@ -62,42 +71,22 @@ footer {
     /* width: 150px; */
 }
 
-.link2 {
-    grid-area: link2;
-    background-color: yellow;
-    color: black;
-    border: black 2px solid;
-}
-
-.link3 {
-    grid-area: link3;
-    background-color: blueviolet;
-    color: black;
-    border: black 2px solid;
-}
-
-.link4 {
-    grid-area: link4;
-    background-color: yellow;
-    color: black;
-    border: black 2px solid;
-}
-
 .link5 {
     grid-area: link5;
     background-color: blueviolet;
     color: black;
     border: black 2px solid;
+    width: 100%;
 }
 
-.midsection {
+#midsection {
     display: grid;
     grid-template-areas: 
     ". login ."
     ". outerbox .";
 }
 
-.login {
+#login {
     grid-area: login;
     border: black solid 2px;
     background-color: brown;
@@ -107,7 +96,7 @@ footer {
     /* background-position-x: 200px; */
 }
 
-.outerbox {
+#outerbox {
     grid-area: outerbox;
     border-radius: 20px;
     border: black solid 2px;

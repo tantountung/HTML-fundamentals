@@ -5,7 +5,7 @@ body {
 
     display: grid;
     grid-template-areas: 
-        "header header"
+        "header header "
         "section aside"
         "footer footer";
     grid-gap: 10px;
@@ -16,6 +16,15 @@ body {
 header {
     grid-area: header;
     border: black 2px solid;
+
+    display: grid;
+    grid-template-areas:
+    "link1 links links links link5";
+    grid-gap: 10px;
+    padding: 10px;  
+    border: black 2px solid;  
+    align-items: center;
+    justify-items: center;
 }
 
 section {
@@ -39,24 +48,21 @@ footer {
     text-align: center;
 }
 
-.headcontent {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:
-    "link1 link2 link3 link4 . link5";
-
-    /* <-- why not working to horizontal --> */
-
-    grid-gap: 10px;
-    padding: 10px;  
-    border: black 2px solid;  
-}
-
 #stylenone {
     list-style-type: none;
+    grid-area: links;
+    border: black 2px;
 }
 
-.link1 {
+#stylenone > li {
+float: left;
+border: black 2px solid;
+padding: 5px;
+background-color: blanchedalmond;
+width: 30%;
+}
+
+header > h1 {
     grid-area: link1;
     background-color: blueviolet;
     color: black;
@@ -64,44 +70,15 @@ footer {
     /* width: 150px; */
 }
 
-.link2 {
-    grid-area: link2;
-    background-color: yellow;
-    color: black;
-    border: black 2px solid;
-}
-
-.link3 {
-    grid-area: link3;
-    background-color: blueviolet;
-    color: black;
-    border: black 2px solid;
-}
-
-.link4 {
-    grid-area: link4;
-    background-color: yellow;
-    color: black;
-    border: black 2px solid;
-}
-
 .link5 {
     grid-area: link5;
     background-color: blueviolet;
     color: black;
     border: black 2px solid;
+    width: 100%;
 }
 
-.middle {
-    display: grid;
-    grid-template-areas: 
-    "leftbar rightbar";
-    grid-gap: 10px;
-    padding: 10px;
-    background-color: tomato;
-}
-.leftbar {
-    grid-area: leftbar;
+#leftbar {
     background-color: teal;
 
     display: grid;
@@ -113,50 +90,36 @@ footer {
     grid-template-rows: 1fr 1fr 3fr 3fr;
 }
 
-.login {
-    grid-area: login;
+#h3 {
+    grid-area: h3;
     border: black solid 2px;
-    background-color: brown;
-    padding: 20px;
-    width: 20%;
-    margin-left: 300px;
-    /* background-position-x: 200px; */
+    padding: 5px;
+    margin: 5px;
 }
 
-.outerbox {
-    grid-area: outerbox;
-    border-radius: 20px;
-    border: black solid 2px;
-    background-color: burlywood;
-    padding: 20px;
-    width: 40%;
-    margin-left: 300px;
-    margin-bottom: 30px;
-
-    display: grid;
-    grid-template-areas: 
-    ". enter ."
-    ". enter ."
-    ". button ."
-    ". button .";
-    align-content: center;
-    /* why not vertical */
+#p {
+    grid-area: p;
+    border: solid 2px black;
+    padding: 5px;
+    margin: 5px
 }
 
-.enter {
-    grid-area: enter;
-    margin: 10px;
-    border: 2px solid black;
+#leftbar1 {
+    grid-area: leftbar1;
+    background-color: cadetblue;
+    padding: 5px;
+    margin: 5px
 }
 
-.button {
-    grid-area: button;
-    margin: 10px;
-    border: 2px solid black;
-    transition-duration: 0.4ms;
+#leftbar2 {
+    grid-area: leftbar2;
+    background-color: darkblue;
+    padding: 5px;
+    margin: 5px;
 }
 
-.button:hover {
-    color: black;
-    background-color: chocolate;
+#img {
+    height: 200px;
+    width: auto;
 }
+
