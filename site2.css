@@ -5,9 +5,9 @@ body {
 
     display: grid;
     grid-template-areas: 
-        "header header"
-        "section aside"
-        "footer footer";
+        "header"
+        "section"
+        "footer";
     grid-gap: 10px;
     background-color: grey;
     padding: 10px;
@@ -22,12 +22,6 @@ section {
     grid-area: section;
     border: black 2px solid;
     background-color: darkgreen;
-}
-
-aside {
-    grid-area: aside;
-    border: black 2px solid;
-    background-color: yellow;
 }
 
 footer {
@@ -50,6 +44,10 @@ footer {
     grid-gap: 10px;
     padding: 10px;  
     border: black 2px solid;  
+}
+
+#uppercase {
+    text-transform: uppercase;
 }
 
 #stylenone {
@@ -92,25 +90,11 @@ footer {
     border: black 2px solid;
 }
 
-.middle {
+.midsection {
     display: grid;
     grid-template-areas: 
-    "leftbar rightbar";
-    grid-gap: 10px;
-    padding: 10px;
-    background-color: tomato;
-}
-.leftbar {
-    grid-area: leftbar;
-    background-color: teal;
-
-    display: grid;
-    grid-template-areas: 
-    "h3 h3 h3 h3"
-    "p p p p"
-    "leftbar1 leftbar1 leftbar2 leftbar2"
-    "leftbar1 leftbar1 leftbar2 leftbar2";
-    grid-template-rows: 1fr 1fr 3fr 3fr;
+    ". login ."
+    ". outerbox .";
 }
 
 .login {
