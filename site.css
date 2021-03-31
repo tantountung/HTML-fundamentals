@@ -5,9 +5,9 @@ body {
 
     display: grid;
     grid-template-areas: 
-        "header header "
-        "section aside"
-        "footer footer";
+        "header"
+        "section"
+        "footer";
     grid-gap: 10px;
     background-color: grey;
     padding: 10px;
@@ -27,25 +27,16 @@ header {
     justify-items: center;
 }
 
-section {
-    grid-area: section;
-    border: black 2px solid;
-    background-color: darkgreen;
+#uppercase {
+    text-transform: uppercase;
 }
 
-aside {
-    grid-area: aside;
-    border: black 2px solid;
-    background-color: yellow;
-}
-
-footer {
-    grid-area: footer;
-    border: black 2px solid;
-    background-color: hotpink;
+header > h1 {
+    grid-area: link1;
+    background-color: blueviolet;
     color: black;
-    font-weight: bold;
-    text-align: center;
+    border: black 2px solid;
+    /* width: 150px; */
 }
 
 #stylenone {
@@ -62,14 +53,6 @@ background-color: blanchedalmond;
 width: 30%;
 }
 
-header > h1 {
-    grid-area: link1;
-    background-color: blueviolet;
-    color: black;
-    border: black 2px solid;
-    /* width: 150px; */
-}
-
 .link5 {
     grid-area: link5;
     background-color: blueviolet;
@@ -77,9 +60,21 @@ header > h1 {
     border: black 2px solid;
     width: 100%;
 }
+#midsection {
+    grid-area: section;
+}
+
+.difsection {
+    display: grid;
+    grid-template-areas: 
+    "section aside";
+    
+} 
 
 #leftbar {
-    background-color: teal;
+    grid-area: section;
+    border: black 2px solid;
+    background-color: darkgreen;
 
     display: grid;
     grid-template-areas: 
@@ -122,4 +117,78 @@ header > h1 {
     height: 200px;
     width: auto;
 }
+
+aside {
+    grid-area: aside;
+    border: black 2px solid;
+    background-color: yellow;
+}
+
+.loginsection {
+    border: black 2px solid;
+    background-color: darkgreen;
+
+    display: grid;
+    grid-template-areas: 
+    ". login ."
+    ". outerbox .";
+}
+
+
+#login {
+    grid-area: login;
+    border: black solid 2px;
+    background-color: brown;
+    padding: 20px;
+    width: 20%;
+    margin-left: 300px;
+}
+
+#outerbox {
+    grid-area: outerbox;
+    border-radius: 20px;
+    border: black solid 2px;
+    background-color: burlywood;
+    padding: 20px;
+    width: 40%;
+    margin-left: 300px;
+    margin-bottom: 30px;
+
+    display: grid;
+    grid-template-areas: 
+    ". enter ."
+    ". enter ."
+    ". button ."
+    ". button .";
+    align-content: center;
+    /* why not vertical */
+}
+
+.enter {
+    grid-area: enter;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.button {
+    grid-area: button;
+    margin: 10px;
+    border: 2px solid black;
+    transition-duration: 0.4ms;
+}
+
+.button:hover {
+    color: black;
+    background-color: chocolate;
+}
+
+footer {
+    grid-area: footer;
+    border: black 2px solid;
+    background-color: hotpink;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
 
